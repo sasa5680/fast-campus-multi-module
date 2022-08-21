@@ -6,12 +6,17 @@ import dev.backend.module_common.enums.CodeEnum;
 import dev.backend.module_common.repo.MemberRepo;
 import dev.backend.module_common.service.CommonDemoService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class DemoService {
+
+    @Value("${profile-name}")
+    private String name;
 
     private final CommonDemoService demoService;
 
@@ -21,6 +26,7 @@ public class DemoService {
 
         memberRepo.save(Member.builder().name(Thread.currentThread().getName()).build());
 
+        System.out.println("name " + name);
         System.out.println(CodeEnum.SUCCESS.getCode());
         System.out.println((demoService.commonService()));
         return "save";

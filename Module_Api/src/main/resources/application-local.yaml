@@ -1,0 +1,14 @@
+profile-name: local
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mysql://127.0.0.1/multi
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: wjd@568099
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true

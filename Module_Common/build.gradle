@@ -38,3 +38,8 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+tasks.bootJar {enabled = false} //모듈이기 때문에 실행 가능한 Jar 파일이 필요 없다. (true면 Main class를 찾기 때문에 오류남)
+tasks.jar {enabled = true} // xxx-plain.jar 파일을 만든다.
+
+// ./gradlew clean :Module_Api:buildNeeded --stacktrace --info --refresh-dependencies -x test

@@ -18,4 +18,6 @@ public class ModuleApiApplication {
         SpringApplication.run(ModuleApiApplication.class, args);
     }
 
+    //빌드 할 때 property 파일 넣어주는 법
+    //java -jar -Dspring.profiles.active=프로파일 이름름 ja파일 이름
 }
